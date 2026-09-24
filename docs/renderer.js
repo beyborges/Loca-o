@@ -308,10 +308,10 @@ function openRentalForm(id){
 }
 function updateRentalAddress(){
   const client=data.clients.find(c=>c.id===$('#rent-client').value);
-  const locations=(client?.addresses||[]).slice(1);
-  $('#rent-address').innerHTML='<option value="">Selecione a obra / local da locação</option>'+locations.map(a=>`<option value="${esc(a.id)}">${esc(a.label)} · ${esc(a.street)}, ${esc(a.number)} · ${esc(a.city)}/${esc(a.state)}</option>`).join('');
+  const locations=client?.addresses||[];
+  $('#rent-address').innerHTML='<option value="">Selecione o local de utilização</option>'+locations.map((a,index)=>`<option value="${esc(a.id)}">${index===0?'Cobrança / residência ou trabalho':'Obra / locação'} · ${esc(a.label)} · ${esc(a.street)}, ${esc(a.number)} · ${esc(a.city)}/${esc(a.state)}</option>`).join('');
   if(locations.length===1)$('#rent-address').value=locations[0].id;
-  $('#rent-address-help').textContent=client&&!client.addresses.length?'Cadastre primeiro o endereço de cobrança e depois um endereço de obra / locação.':client&&client.addresses.length===1?'Este cliente possui somente o endereço de cobrança. Adicione um endereço de obra / locação.':'';
+  $('#rent-address-help').textContent=client&&!locations.length?'Este cliente não possui endereço cadastrado. Adicione o endereço de cobrança ou um local de utilização.':'';
 }
 function updateRentalQuote(){
   const items=selectedRentalItems(),start=$('#rent-start').value;
