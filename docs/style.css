@@ -5,6 +5,7 @@
 #editor #record-form{height:100%;display:flex;flex-direction:column;min-height:0}
 #editor .dialog-header,#editor #editor-tabs,#editor .dialog-footer,#editor #form-error{flex-shrink:0}
 .copy-button{font-size:12px;background:none;border:0;padding:8px;color:#8a5a00;font-weight:600}
+#return-error{margin-top:18px;padding:12px 14px;border-radius:6px;background:#fff0f1;color:#a12335;font-size:14px}
 #editor #form-body{flex:1;min-height:0;max-height:none;overflow-y:auto}
 body:has(#editor[open]){overflow:hidden}
 #rental-editor{position:fixed;inset:0;margin:0;width:100%;height:100%;max-width:none;max-height:none;border:0;border-radius:0;overflow:hidden}
