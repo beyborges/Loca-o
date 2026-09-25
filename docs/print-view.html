@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Documento para impressão</title>
+  <link rel="stylesheet" href="print-view.css">
+</head>
+<body>
+  <nav class="toolbar" aria-label="Ações do documento">
+    <div>
+      <strong id="toolbar-title">Documento</strong>
+      <small>Confira o conteúdo antes de imprimir ou salvar em PDF.</small>
+    </div>
+    <button id="print-document" type="button">Imprimir / Salvar PDF</button>
+  </nav>
+  <main class="viewport">
+    <article id="print-document-content" class="paper" aria-live="polite">
+      <p class="loading">Carregando documento...</p>
+    </article>
+  </main>
+  <script src="print-view.js"></script>
+</body>
+</html>
