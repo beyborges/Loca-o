@@ -41,3 +41,20 @@ body:has(#editor[open]){overflow:hidden}
 @media(max-width:620px){.company-logo-field{align-items:flex-start;flex-direction:column}.company-logo-preview{width:82px;height:82px;flex-basis:82px}}
 .list-toolbar-actions{display:flex;justify-content:flex-end;align-items:center;gap:10px;flex:1;min-width:0}.list-toolbar-actions .search{flex:1}.report-button{border:1px solid #2b678a;border-radius:7px;background:#27658b;color:#fff;padding:10px 14px;font-weight:700;font-size:13px;white-space:nowrap}.report-button:hover{background:#1b5274}
 @media(max-width:760px){.list-toolbar-actions{align-items:stretch;flex-direction:column}.list-toolbar-actions .search{width:100%;max-width:none}.report-button{width:100%}}
+/* Keep every module reachable on shorter browser windows and mobile screens. */
+@media(min-width:761px){
+  .sidebar{overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:#718996 var(--navy)}
+  .sidebar>.brand,.sidebar>.nav-label,.sidebar>nav,.sidebar>.sidebar-foot{flex-shrink:0}
+}
+@media(min-width:761px) and (max-height:800px){
+  .sidebar{padding-top:20px;padding-bottom:20px}
+  .brand{margin-bottom:24px}
+  .nav-label{margin-bottom:10px}
+  .nav-item{padding:10px 12px;margin-bottom:4px;font-size:14px;min-height:44px}
+  .sidebar-foot{padding-top:20px}
+}
+@media(max-width:760px){
+  .sidebar{flex-direction:column;align-items:stretch;gap:12px}
+  .sidebar nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px}
+  .nav-item{min-width:0;min-height:44px;white-space:normal}
+}
